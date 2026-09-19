@@ -1,1 +1,107 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0B0C14;
+  --color-brand-card: #131522;
+  --color-brand-card-hover: #1A1D2E;
+  --color-brand-orange: #FF3722;
+  --color-brand-orange-hover: #E02B18;
+  --color-brand-light-text: #9CA3AF;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-magma: 0 0 25px -5px rgba(255, 55, 34, 0.4);
+  --shadow-magma-lg: 0 0 40px -5px rgba(255, 55, 34, 0.6);
+  --shadow-glow: 0 0 15px rgba(255, 55, 34, 0.25);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-brand-dark);
+    color: #ffffff;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+  }
+
+  ::selection {
+    background-color: var(--color-brand-orange);
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0c14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2438;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-orange);
+  }
+}
+
+.glass-nav {
+  background: rgba(11, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(19, 21, 34, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 55, 34, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 30%, var(--color-brand-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-orange {
+  background: linear-gradient(135deg, #ff7043 0%, var(--color-brand-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
