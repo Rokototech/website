@@ -6,12 +6,12 @@ export function Faq() {
 
   return (
     <section className="py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-brand-orange mb-3">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-3 text-xs font-bold tracking-widest text-brand-orange uppercase">
             Preguntas Frecuentes
           </h2>
-          <p className="text-3xl sm:text-4xl font-bold font-heading">
+          <p className="font-heading text-3xl font-bold sm:text-4xl">
             Resolvemos tus dudas antes de comenzar
           </p>
         </div>
@@ -22,11 +22,11 @@ export function Faq() {
             return (
               <div
                 key={faq.question}
-                className="glass-card rounded-xl overflow-hidden border border-brand-border"
+                className="glass-card overflow-hidden rounded-xl border border-brand-border"
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-5 text-left font-bold font-heading text-sm sm:text-base flex justify-between items-center text-white hover:text-brand-orange transition-colors"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left font-heading text-sm font-bold text-white transition-colors hover:text-brand-orange sm:text-base"
                 >
                   <span>{faq.question}</span>
                   <i
@@ -36,7 +36,7 @@ export function Faq() {
                   ></i>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-5 text-xs sm:text-sm text-brand-light-text leading-relaxed">
+                  <div className="px-6 pb-5 text-xs leading-relaxed text-brand-light-text sm:text-sm">
                     {faq.answer}
                   </div>
                 )}

@@ -1,16 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-brand-dark: #0B0C14;
+  --color-brand-dark: #0b0c14;
   --color-brand-card: #131522;
-  --color-brand-card-hover: #1A1D2E;
-  --color-brand-orange: #FF3722;
-  --color-brand-orange-hover: #E02B18;
-  --color-brand-light-text: #9CA3AF;
+  --color-brand-card-hover: #1a1d2e;
+  --color-brand-orange: #ff3722;
+  --color-brand-orange-hover: #e02b18;
+  --color-brand-light-text: #9ca3af;
   --color-brand-border: rgba(255, 255, 255, 0.08);
 
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   --shadow-magma: 0 0 25px -5px rgba(255, 55, 34, 0.4);
   --shadow-magma-lg: 0 0 40px -5px rgba(255, 55, 34, 0.6);
@@ -19,7 +19,8 @@
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
     }
     50% {
@@ -85,13 +86,21 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, var(--color-brand-orange) 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 30%,
+    var(--color-brand-orange) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-orange {
-  background: linear-gradient(135deg, #ff7043 0%, var(--color-brand-orange) 100%);
+  background: linear-gradient(
+    135deg,
+    #ff7043 0%,
+    var(--color-brand-orange) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -18,7 +18,9 @@ function App() {
   const handleApplyQuote = useCallback((message: string) => {
     setQuoteMessage(message)
     setTimeout(() => {
-      document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+      document
+        .getElementById('contacto')
+        ?.scrollIntoView({ behavior: 'smooth' })
     }, 50)
   }, [])
 

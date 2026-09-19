@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
 
-export function useInView<T extends HTMLElement>(threshold = 0.3): {
+export function useInView<T extends HTMLElement>(
+  threshold = 0.3,
+): {
   ref: RefObject<T | null>
   inView: boolean
 } {

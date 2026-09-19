@@ -2,32 +2,41 @@ import { testimonials } from '../data/content'
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-brand-card/30 border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-brand-orange mb-3">
+    <section className="border-y border-brand-border bg-brand-card/30 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <h2 className="mb-3 text-xs font-bold tracking-widest text-brand-orange uppercase">
             Testimonios
           </h2>
-          <p className="text-3xl sm:text-4xl font-bold font-heading">Lo que dicen nuestros clientes</p>
+          <p className="font-heading text-3xl font-bold sm:text-4xl">
+            Lo que dicen nuestros clientes
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {testimonials.map((t) => (
-            <div key={t.initials} className="glass-card p-8 rounded-2xl relative">
-              <div className="flex items-center text-yellow-400 gap-1 text-sm mb-4">
+            <div
+              key={t.initials}
+              className="glass-card relative rounded-2xl p-8"
+            >
+              <div className="mb-4 flex items-center gap-1 text-sm text-yellow-400">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <i key={i} className="fa-solid fa-star"></i>
                 ))}
               </div>
-              <p className="text-sm text-gray-300 leading-relaxed italic mb-6">{t.quote}</p>
+              <p className="mb-6 text-sm leading-relaxed text-gray-300 italic">
+                {t.quote}
+              </p>
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-10 h-10 rounded-full border flex items-center justify-center font-bold ${t.avatarClass}`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full border font-bold ${t.avatarClass}`}
                 >
                   {t.initials}
                 </div>
                 <div>
-                  <div className="font-bold font-heading text-sm text-white">{t.name}</div>
+                  <div className="font-heading text-sm font-bold text-white">
+                    {t.name}
+                  </div>
                   <div className="text-xs text-brand-light-text">{t.role}</div>
                 </div>
               </div>

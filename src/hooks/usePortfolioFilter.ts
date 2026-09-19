@@ -5,7 +5,10 @@ export function usePortfolioFilter() {
   const [filter, setFilter] = useState<ProjectFilter>('all')
 
   const filteredProjects = useMemo(
-    () => (filter === 'all' ? projects : projects.filter((p) => p.category === filter)),
+    () =>
+      filter === 'all'
+        ? projects
+        : projects.filter((p) => p.category === filter),
     [filter],
   )
 
