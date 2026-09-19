@@ -1,4 +1,4 @@
-import { useParticleCanvas } from '../hooks/useParticleCanvas'
+import { useParticleCanvas } from './useParticleCanvas'
 
 export function Hero() {
   const canvasRef = useParticleCanvas()

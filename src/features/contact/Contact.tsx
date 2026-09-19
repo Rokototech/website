@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { contact, socials } from '../data/content'
+import { contact, socials } from '../../data/content'
 
 const inputClass =
   'w-full bg-brand-dark/80 border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition-colors'

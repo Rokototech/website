@@ -2,8 +2,8 @@ import {
   projectTypeOptions,
   featureOptions,
   timelineOptions,
-} from '../data/content'
-import { useCalculator } from '../hooks/useCalculator'
+} from '../../data/content'
+import { useCalculator } from './useCalculator'
 
 const steps = [
   { label: 'Tipo de Proyecto' },

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { projects, type Project, type ProjectFilter } from '../data/content'
+import { projects, type Project, type ProjectFilter } from '../../data/content'
 
 export function usePortfolioFilter() {
   const [filter, setFilter] = useState<ProjectFilter>('all')

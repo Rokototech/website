@@ -1,6 +1,6 @@
-import { navLinks } from '../data/content'
-import { useMobileMenu } from '../hooks/useMobileMenu'
-import { Logo } from './Logo'
+import { navLinks } from '../../../data/content'
+import { useMobileMenu } from './useMobileMenu'
+import { Logo } from '../../ui/Logo'
 
 export function Navbar() {
   const { isOpen, toggle, close } = useMobileMenu()
