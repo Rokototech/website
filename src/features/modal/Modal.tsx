@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { services, projects } from '../data/content'
-import { useModal } from '../hooks/useModal'
+import { services, projects } from '../../data/content'
+import { useModal } from './useModal'
 
 export function Modal() {
   const { content, close, scrollToContact } = useModal()

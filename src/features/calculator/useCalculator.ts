@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
-import type { FeatureKey, ProjectType, TimelineType } from '../data/content'
+import type { FeatureKey, ProjectType, TimelineType } from '../../data/content'
 
 interface Estimate {
   basePrice: number

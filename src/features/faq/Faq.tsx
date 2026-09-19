@@ -1,5 +1,5 @@
-import { faqs } from '../data/content'
-import { useFaq } from '../hooks/useFaq'
+import { faqs } from '../../data/content'
+import { useFaq } from './useFaq'
 
 export function Faq() {
   const { openIndex, toggleItem } = useFaq()

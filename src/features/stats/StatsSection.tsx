@@ -1,6 +1,6 @@
-import { stats, techStack } from '../data/content'
-import { useCountUp } from '../hooks/useCountUp'
-import { useInView } from '../hooks/useInView'
+import { stats, techStack } from '../../data/content'
+import { useCountUp } from './useCountUp'
+import { useInView } from '../../hooks/useInView'
 
 function Counter({
   value,

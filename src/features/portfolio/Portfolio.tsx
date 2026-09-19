@@ -1,5 +1,5 @@
-import { usePortfolioFilter } from '../hooks/usePortfolioFilter'
-import { useModal } from '../hooks/useModal'
+import { usePortfolioFilter } from './usePortfolioFilter'
+import { useModal } from '../modal/useModal'
 
 const activeStyles = 'bg-brand-orange text-white shadow-magma'
 const inactiveStyles = 'glass-card text-gray-300 hover:text-white'
