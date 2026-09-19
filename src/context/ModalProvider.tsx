@@ -1,5 +1,9 @@
 import { useCallback, useMemo, useState, type ReactNode } from 'react'
-import { ModalContext, type ModalContextValue, type ModalPayload } from './modal-context'
+import {
+  ModalContext,
+  type ModalContextValue,
+  type ModalPayload,
+} from './modal-context'
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [content, setContent] = useState<ModalPayload>(null)
@@ -23,7 +27,14 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo<ModalContextValue>(
-    () => ({ content, openService, openProject, alert, close, scrollToContact }),
+    () => ({
+      content,
+      openService,
+      openProject,
+      alert,
+      close,
+      scrollToContact,
+    }),
     [content, openService, openProject, alert, close, scrollToContact],
   )
 

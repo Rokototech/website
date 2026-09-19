@@ -43,33 +43,36 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
   }
 
   return (
-    <section id="contacto" className="py-24 bg-brand-card/20 border-t border-brand-border relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section
+      id="contacto"
+      className="relative border-t border-brand-border bg-brand-card/20 py-24"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="text-xs font-bold tracking-widest text-brand-orange uppercase">
               Hablemos de tu Proyecto
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold font-heading tracking-tight mt-3 mb-6">
+            <h2 className="mt-3 mb-6 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
               ¿Listo para escalar tu negocio digital?
             </h2>
-            <p className="text-brand-light-text text-base mb-8 leading-relaxed">
-              Cuéntanos tu idea o requerimiento técnico. Te responderemos en menos de 24 horas con
-              una propuesta clara y sin compromiso.
+            <p className="mb-8 text-base leading-relaxed text-brand-light-text">
+              Cuéntanos tu idea o requerimiento técnico. Te responderemos en
+              menos de 24 horas con una propuesta clara y sin compromiso.
             </p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-brand-orange/10 border border-brand-orange/30 flex items-center justify-center text-brand-orange text-xl shadow-glow">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-orange/30 bg-brand-orange/10 text-xl text-brand-orange shadow-glow">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div>
-                  <div className="text-xs text-brand-light-text uppercase tracking-wider">
+                  <div className="text-xs tracking-wider text-brand-light-text uppercase">
                     Correo Electrónico
                   </div>
                   <a
                     href={`mailto:${contact.email}`}
-                    className="font-bold font-heading text-white hover:text-brand-orange transition-colors"
+                    className="font-heading font-bold text-white transition-colors hover:text-brand-orange"
                   >
                     {contact.email}
                   </a>
@@ -77,16 +80,16 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-brand-orange/10 border border-brand-orange/30 flex items-center justify-center text-brand-orange text-xl shadow-glow">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-orange/30 bg-brand-orange/10 text-xl text-brand-orange shadow-glow">
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div>
-                  <div className="text-xs text-brand-light-text uppercase tracking-wider">
+                  <div className="text-xs tracking-wider text-brand-light-text uppercase">
                     Teléfono / WhatsApp
                   </div>
                   <a
                     href={contact.phoneHref}
-                    className="font-bold font-heading text-white hover:text-brand-orange transition-colors"
+                    className="font-heading font-bold text-white transition-colors hover:text-brand-orange"
                   >
                     {contact.phone}
                   </a>
@@ -94,14 +97,16 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-brand-orange/10 border border-brand-orange/30 flex items-center justify-center text-brand-orange text-xl shadow-glow">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-orange/30 bg-brand-orange/10 text-xl text-brand-orange shadow-glow">
                   <i className="fa-solid fa-location-dot"></i>
                 </div>
                 <div>
-                  <div className="text-xs text-brand-light-text uppercase tracking-wider">
+                  <div className="text-xs tracking-wider text-brand-light-text uppercase">
                     Ubicación
                   </div>
-                  <div className="font-bold font-heading text-white">{contact.location}</div>
+                  <div className="font-heading font-bold text-white">
+                    {contact.location}
+                  </div>
                 </div>
               </div>
             </div>
@@ -111,7 +116,7 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-brand-orange hover:border-brand-orange transition-all"
+                  className="glass-card flex h-10 w-10 items-center justify-center rounded-lg text-gray-300 transition-all hover:border-brand-orange hover:text-brand-orange"
                 >
                   <i className={social.icon}></i>
                 </a>
@@ -119,7 +124,7 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
             </div>
           </div>
 
-          <div className="glass-card p-8 sm:p-10 rounded-3xl border border-brand-border">
+          <div className="glass-card rounded-3xl border border-brand-border p-8 sm:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className={labelClass}>Nombre Completo *</label>
@@ -134,7 +139,7 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label className={labelClass}>Correo Corporativo *</label>
                   <input
@@ -176,16 +181,17 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl font-bold bg-brand-orange text-white hover:bg-brand-orange-hover shadow-magma transition-all flex items-center justify-center gap-2"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-orange py-4 font-bold text-white shadow-magma transition-all hover:bg-brand-orange-hover"
               >
-                <span>Enviar Solicitud</span> <i className="fa-solid fa-paper-plane text-xs"></i>
+                <span>Enviar Solicitud</span>{' '}
+                <i className="fa-solid fa-paper-plane text-xs"></i>
               </button>
             </form>
 
             {sent && (
-              <div className="mt-4 p-4 rounded-xl text-center text-sm font-semibold bg-green-500/20 text-green-400 border border-green-500/40">
-                ¡Mensaje enviado con éxito! Un especialista de VOLKANEXT se pondrá en contacto en
-                breve.
+              <div className="mt-4 rounded-xl border border-green-500/40 bg-green-500/20 p-4 text-center text-sm font-semibold text-green-400">
+                ¡Mensaje enviado con éxito! Un especialista de VOLKANEXT se
+                pondrá en contacto en breve.
               </div>
             )}
           </div>

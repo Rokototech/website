@@ -33,12 +33,36 @@ export interface TechItem {
 }
 
 export const techStack: TechItem[] = [
-  { icon: 'fa-brands fa-react', label: 'React / Next.js', iconClass: 'text-cyan-400' },
-  { icon: 'fa-brands fa-node-js', label: 'Node.js', iconClass: 'text-green-500' },
-  { icon: 'fa-brands fa-python', label: 'Python / Fast API', iconClass: 'text-yellow-400' },
-  { icon: 'fa-brands fa-aws', label: 'Cloud & AWS', iconClass: 'text-orange-400' },
-  { icon: 'fa-brands fa-docker', label: 'Docker & DevOps', iconClass: 'text-blue-400' },
-  { icon: 'fa-solid fa-mobile-screen', label: 'React Native / Flutter', iconClass: 'text-brand-orange' },
+  {
+    icon: 'fa-brands fa-react',
+    label: 'React / Next.js',
+    iconClass: 'text-cyan-400',
+  },
+  {
+    icon: 'fa-brands fa-node-js',
+    label: 'Node.js',
+    iconClass: 'text-green-500',
+  },
+  {
+    icon: 'fa-brands fa-python',
+    label: 'Python / Fast API',
+    iconClass: 'text-yellow-400',
+  },
+  {
+    icon: 'fa-brands fa-aws',
+    label: 'Cloud & AWS',
+    iconClass: 'text-orange-400',
+  },
+  {
+    icon: 'fa-brands fa-docker',
+    label: 'Docker & DevOps',
+    iconClass: 'text-blue-400',
+  },
+  {
+    icon: 'fa-solid fa-mobile-screen',
+    label: 'React Native / Flutter',
+    iconClass: 'text-brand-orange',
+  },
 ]
 
 export type ServiceKey = 'web' | 'mobile' | 'software' | 'cloud' | 'uiux' | 'ai'
@@ -263,11 +287,13 @@ export const socials: { icon: string; href: string; label: string }[] = [
   { icon: 'fa-brands fa-instagram', href: '#', label: 'Instagram' },
 ]
 
-export type ProjectType = 'web' | 'webapp' | 'mobile' | 'software' | 'ecommerce' | 'ai'
+export type ProjectType =
+  'web' | 'webapp' | 'mobile' | 'software' | 'ecommerce' | 'ai'
 
 export type TimelineType = 'urgent' | 'standard' | 'flexible'
 
-export type FeatureKey = 'auth' | 'payments' | 'admin' | 'api' | 'chat' | 'multilang'
+export type FeatureKey =
+  'auth' | 'payments' | 'admin' | 'api' | 'chat' | 'multilang'
 
 export interface ProjectTypeOption {
   type: ProjectType
@@ -322,12 +348,36 @@ export interface FeatureOption {
 }
 
 export const featureOptions: FeatureOption[] = [
-  { key: 'auth', title: 'Autenticación & Usuarios', desc: 'Login, registro, roles de permisos y OAuth' },
-  { key: 'payments', title: 'Pasarela de Pagos', desc: 'Stripe, PayPal, Culqi o MercadoPago integrados' },
-  { key: 'admin', title: 'Panel Administrador Dashboard', desc: 'Gestión de datos, métricas y analítica visual' },
-  { key: 'api', title: 'API REST & Microservicios', desc: 'Conexión con software externo o sistemas legados' },
-  { key: 'chat', title: 'Notificaciones & Tiempo Real', desc: 'Sockets, chat interno y alertas push' },
-  { key: 'multilang', title: 'Soporte Multi-idioma (i18n)', desc: 'Español, Inglés y localización global' },
+  {
+    key: 'auth',
+    title: 'Autenticación & Usuarios',
+    desc: 'Login, registro, roles de permisos y OAuth',
+  },
+  {
+    key: 'payments',
+    title: 'Pasarela de Pagos',
+    desc: 'Stripe, PayPal, Culqi o MercadoPago integrados',
+  },
+  {
+    key: 'admin',
+    title: 'Panel Administrador Dashboard',
+    desc: 'Gestión de datos, métricas y analítica visual',
+  },
+  {
+    key: 'api',
+    title: 'API REST & Microservicios',
+    desc: 'Conexión con software externo o sistemas legados',
+  },
+  {
+    key: 'chat',
+    title: 'Notificaciones & Tiempo Real',
+    desc: 'Sockets, chat interno y alertas push',
+  },
+  {
+    key: 'multilang',
+    title: 'Soporte Multi-idioma (i18n)',
+    desc: 'Español, Inglés y localización global',
+  },
 ]
 
 export interface TimelineOption {

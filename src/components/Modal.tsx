@@ -27,20 +27,24 @@ export function Modal() {
 
       return (
         <>
-          <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange text-2xl mb-4">
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-orange/40 bg-brand-orange/20 text-2xl text-brand-orange">
             <i className={`${service.icon} font-bold`}></i>
           </div>
-          <h3 className="text-2xl font-bold font-heading text-white mb-3">{service.modalTitle}</h3>
-          <p className="text-brand-light-text text-sm mb-6 leading-relaxed">{service.modalDesc}</p>
+          <h3 className="mb-3 font-heading text-2xl font-bold text-white">
+            {service.modalTitle}
+          </h3>
+          <p className="mb-6 text-sm leading-relaxed text-brand-light-text">
+            {service.modalDesc}
+          </p>
           <div className="mb-6">
-            <div className="text-xs font-semibold uppercase text-gray-400 mb-2">
+            <div className="mb-2 text-xs font-semibold text-gray-400 uppercase">
               Tecnologías recomendadas:
             </div>
             <div className="flex flex-wrap gap-2">
               {service.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-lg bg-white/10 text-xs text-white font-medium"
+                  className="rounded-lg bg-white/10 px-3 py-1 text-xs font-medium text-white"
                 >
                   {tech}
                 </span>
@@ -49,7 +53,7 @@ export function Modal() {
           </div>
           <button
             onClick={handleRequest}
-            className="w-full py-3.5 rounded-xl bg-brand-orange text-white font-bold text-sm shadow-magma"
+            className="w-full rounded-xl bg-brand-orange py-3.5 text-sm font-bold text-white shadow-magma"
           >
             Solicitar Propuesta para este Servicio
           </button>
@@ -63,22 +67,26 @@ export function Modal() {
 
       return (
         <>
-          <span className="text-xs font-bold uppercase text-brand-orange tracking-widest">
+          <span className="text-xs font-bold tracking-widest text-brand-orange uppercase">
             {project.client}
           </span>
-          <h3 className="text-2xl font-bold font-heading text-white mt-1 mb-4">
+          <h3 className="mt-1 mb-4 font-heading text-2xl font-bold text-white">
             {project.modalTitle}
           </h3>
-          <p className="text-brand-light-text text-sm mb-4 leading-relaxed">{project.modalDesc}</p>
-          <div className="p-4 rounded-xl bg-brand-orange/10 border border-brand-orange/30 mb-6">
-            <span className="text-xs font-bold text-brand-orange uppercase block mb-1">
+          <p className="mb-4 text-sm leading-relaxed text-brand-light-text">
+            {project.modalDesc}
+          </p>
+          <div className="mb-6 rounded-xl border border-brand-orange/30 bg-brand-orange/10 p-4">
+            <span className="mb-1 block text-xs font-bold text-brand-orange uppercase">
               Impacto de Negocio:
             </span>
-            <span className="text-sm font-semibold text-white">{project.impact}</span>
+            <span className="text-sm font-semibold text-white">
+              {project.impact}
+            </span>
           </div>
           <button
             onClick={close}
-            className="w-full py-3 rounded-xl bg-brand-orange text-white font-bold text-sm shadow-magma"
+            className="w-full rounded-xl bg-brand-orange py-3 text-sm font-bold text-white shadow-magma"
           >
             Cerrar Detalle
           </button>
@@ -88,11 +96,13 @@ export function Modal() {
 
     return (
       <>
-        <h3 className="text-2xl font-bold font-heading text-white mb-3">{content.title}</h3>
-        <p className="text-brand-light-text text-sm mb-6">{content.text}</p>
+        <h3 className="mb-3 font-heading text-2xl font-bold text-white">
+          {content.title}
+        </h3>
+        <p className="mb-6 text-sm text-brand-light-text">{content.text}</p>
         <button
           onClick={close}
-          className="w-full py-3 rounded-xl bg-brand-orange text-white font-bold text-sm shadow-magma"
+          className="w-full rounded-xl bg-brand-orange py-3 text-sm font-bold text-white shadow-magma"
         >
           Aceptar
         </button>
@@ -102,16 +112,16 @@ export function Modal() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md transition-all"
       onClick={close}
     >
       <div
-        className="glass-card max-w-2xl w-full rounded-2xl p-6 sm:p-8 border border-brand-orange/40 relative animate-float"
+        className="glass-card relative w-full max-w-2xl animate-float rounded-2xl border border-brand-orange/40 p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={close}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+          className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
         >
           <i className="fa-solid fa-xmark"></i>
         </button>

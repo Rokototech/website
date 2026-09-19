@@ -1,4 +1,8 @@
-import { projectTypeOptions, featureOptions, timelineOptions } from '../data/content'
+import {
+  projectTypeOptions,
+  featureOptions,
+  timelineOptions,
+} from '../data/content'
 import { useCalculator } from '../hooks/useCalculator'
 
 const steps = [
@@ -7,7 +11,11 @@ const steps = [
   { label: 'Plazos & Entrega' },
 ]
 
-export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) => void }) {
+export function Calculator({
+  onApplyQuote,
+}: {
+  onApplyQuote: (message: string) => void
+}) {
   const {
     step,
     nextStep,
@@ -37,7 +45,8 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
 
   const handleApplyQuote = () => {
     const typeText =
-      projectTypeOptions.find((o) => o.type === projectType)?.title ?? 'Proyecto'
+      projectTypeOptions.find((o) => o.type === projectType)?.title ??
+      'Proyecto'
     const priceText = `$${basePrice.toLocaleString()} - $${maxPrice.toLocaleString()} USD`
     const message = `Hola VOLKANEXT, solicito cotización para un proyecto de tipo: ${typeText}.\nInversión calculada: ${priceText}.\nMe gustaría agendar una llamada de descubrimiento.`
 
@@ -45,50 +54,57 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
   }
 
   return (
-    <section id="calculadora" className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[160px] pointer-events-none"></div>
+    <section id="calculadora" className="relative overflow-hidden py-24">
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/10 blur-[160px]"></div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <span className="px-3 py-1 rounded-full bg-brand-orange/20 text-brand-orange text-xs font-semibold uppercase tracking-wider border border-brand-orange/30">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <span className="rounded-full border border-brand-orange/30 bg-brand-orange/20 px-3 py-1 text-xs font-semibold tracking-wider text-brand-orange uppercase">
             Cotización Interactiva
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold font-heading tracking-tight mt-4 mb-3">
+          <h2 className="mt-4 mb-3 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
             Calculadora de Proyecto
           </h2>
-          <p className="text-brand-light-text text-sm sm:text-base max-w-2xl mx-auto">
-            Selecciona las especificaciones de tu proyecto para obtener una estimación aproximada de
-            tiempo e inversión instantánea.
+          <p className="mx-auto max-w-2xl text-sm text-brand-light-text sm:text-base">
+            Selecciona las especificaciones de tu proyecto para obtener una
+            estimación aproximada de tiempo e inversión instantánea.
           </p>
         </div>
 
-        <div className="glass-card rounded-3xl p-6 sm:p-10 border border-brand-orange/30 shadow-magma-lg">
-          <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-6 text-xs sm:text-sm font-heading">
+        <div className="glass-card rounded-3xl border border-brand-orange/30 p-6 shadow-magma-lg sm:p-10">
+          <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-6 font-heading text-xs sm:text-sm">
             {steps.map((s, index) => (
-              <div key={s.label} className="flex items-center flex-1 last:flex-none">
-                <div className={`font-semibold flex items-center gap-2 ${getStepStyle(index)}`}>
+              <div
+                key={s.label}
+                className="flex flex-1 items-center last:flex-none"
+              >
+                <div
+                  className={`flex items-center gap-2 font-semibold ${getStepStyle(index)}`}
+                >
                   <span
-                    className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${getStepNumberStyle(index)}`}
+                    className={`flex h-6 w-6 items-center justify-center rounded-full text-xs ${getStepNumberStyle(index)}`}
                   >
                     {index + 1}
                   </span>
                   <span className="hidden sm:inline">{s.label}</span>
                 </div>
-                {index < steps.length - 1 && <div className="h-0.5 flex-1 bg-white/10 mx-3"></div>}
+                {index < steps.length - 1 && (
+                  <div className="mx-3 h-0.5 flex-1 bg-white/10"></div>
+                )}
               </div>
             ))}
           </div>
 
           {step === 1 && (
             <div>
-              <h3 className="text-lg font-bold font-heading mb-4 text-white">
+              <h3 className="mb-4 font-heading text-lg font-bold text-white">
                 ¿Qué tipo de solución digital deseas construir?
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {projectTypeOptions.map((option) => (
                   <label
                     key={option.type}
-                    className={`glass-card p-5 rounded-xl cursor-pointer border transition-all flex flex-col items-center text-center group ${
+                    className={`glass-card group flex cursor-pointer flex-col items-center rounded-xl border p-5 text-center transition-all ${
                       projectType === option.type
                         ? 'border-brand-orange'
                         : 'border-brand-border hover:border-brand-orange'
@@ -102,9 +118,15 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
                       checked={projectType === option.type}
                       onChange={() => setProjectType(option.type)}
                     />
-                    <i className={`${option.icon} text-3xl text-brand-orange mb-3 group-hover:scale-110 transition-transform`}></i>
-                    <span className="font-bold font-heading text-white text-sm">{option.title}</span>
-                    <span className="text-[11px] text-brand-light-text mt-1">{option.desc}</span>
+                    <i
+                      className={`${option.icon} mb-3 text-3xl text-brand-orange transition-transform group-hover:scale-110`}
+                    ></i>
+                    <span className="font-heading text-sm font-bold text-white">
+                      {option.title}
+                    </span>
+                    <span className="mt-1 text-[11px] text-brand-light-text">
+                      {option.desc}
+                    </span>
                   </label>
                 ))}
               </div>
@@ -113,14 +135,14 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
 
           {step === 2 && (
             <div>
-              <h3 className="text-lg font-bold font-heading mb-4 text-white">
+              <h3 className="mb-4 font-heading text-lg font-bold text-white">
                 Selecciona las funcionalidades requeridas:
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {featureOptions.map((option) => (
                   <label
                     key={option.key}
-                    className={`glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer border transition-all ${
+                    className={`glass-card flex cursor-pointer items-center gap-3 rounded-xl border p-4 transition-all ${
                       features.includes(option.key)
                         ? 'border-brand-orange'
                         : 'border-brand-border hover:border-brand-orange'
@@ -128,13 +150,17 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
                   >
                     <input
                       type="checkbox"
-                      className="accent-brand-orange w-5 h-5"
+                      className="h-5 w-5 accent-brand-orange"
                       checked={features.includes(option.key)}
                       onChange={() => toggleFeature(option.key)}
                     />
                     <div>
-                      <div className="font-bold text-sm text-white">{option.title}</div>
-                      <div className="text-xs text-brand-light-text">{option.desc}</div>
+                      <div className="text-sm font-bold text-white">
+                        {option.title}
+                      </div>
+                      <div className="text-xs text-brand-light-text">
+                        {option.desc}
+                      </div>
                     </div>
                   </label>
                 ))}
@@ -144,14 +170,14 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
 
           {step === 3 && (
             <div>
-              <h3 className="text-lg font-bold font-heading mb-4 text-white">
+              <h3 className="mb-4 font-heading text-lg font-bold text-white">
                 ¿Cuál es el tiempo estimado de entrega deseado?
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {timelineOptions.map((option) => (
                   <label
                     key={option.value}
-                    className={`glass-card p-5 rounded-xl cursor-pointer border text-center transition-all ${
+                    className={`glass-card cursor-pointer rounded-xl border p-5 text-center transition-all ${
                       timeline === option.value
                         ? 'border-brand-orange'
                         : 'border-brand-border hover:border-brand-orange'
@@ -165,34 +191,40 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
                       checked={timeline === option.value}
                       onChange={() => setTimeline(option.value)}
                     />
-                    <i className={`${option.icon} ${option.iconClass} text-2xl mb-2`}></i>
-                    <div className="font-bold text-sm text-white">{option.title}</div>
-                    <div className="text-[11px] text-brand-light-text">{option.desc}</div>
+                    <i
+                      className={`${option.icon} ${option.iconClass} mb-2 text-2xl`}
+                    ></i>
+                    <div className="text-sm font-bold text-white">
+                      {option.title}
+                    </div>
+                    <div className="text-[11px] text-brand-light-text">
+                      {option.desc}
+                    </div>
                   </label>
                 ))}
               </div>
             </div>
           )}
 
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-8 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row">
             <div>
-              <div className="text-xs uppercase tracking-wider text-brand-light-text">
+              <div className="text-xs tracking-wider text-brand-light-text uppercase">
                 Inversión Estimada Aproximada
               </div>
-              <div className="text-3xl sm:text-4xl font-bold font-heading text-brand-orange">
+              <div className="font-heading text-3xl font-bold text-brand-orange sm:text-4xl">
                 ${basePrice.toLocaleString()} - ${maxPrice.toLocaleString()} USD
               </div>
-              <div className="text-[11px] text-gray-400 mt-1">
-                <i className="fa-solid fa-stopwatch mr-1"></i> Tiempo de desarrollo aprox: {timeMin} a{' '}
-                {timeMax} semanas
+              <div className="mt-1 text-[11px] text-gray-400">
+                <i className="fa-solid fa-stopwatch mr-1"></i> Tiempo de
+                desarrollo aprox: {timeMin} a {timeMax} semanas
               </div>
             </div>
 
-            <div className="flex items-center gap-3 w-full md:w-auto">
+            <div className="flex w-full items-center gap-3 md:w-auto">
               {step > 1 && (
                 <button
                   onClick={prevStep}
-                  className="px-5 py-3 rounded-xl border border-brand-border text-xs font-semibold hover:bg-white/5 transition-all"
+                  className="rounded-xl border border-brand-border px-5 py-3 text-xs font-semibold transition-all hover:bg-white/5"
                 >
                   Anterior
                 </button>
@@ -200,16 +232,18 @@ export function Calculator({ onApplyQuote }: { onApplyQuote: (message: string) =
               {step < 3 ? (
                 <button
                   onClick={nextStep}
-                  className="flex-1 md:flex-initial px-6 py-3 rounded-xl bg-brand-orange text-white text-xs font-bold shadow-magma hover:bg-brand-orange-hover transition-all"
+                  className="flex-1 rounded-xl bg-brand-orange px-6 py-3 text-xs font-bold text-white shadow-magma transition-all hover:bg-brand-orange-hover md:flex-initial"
                 >
-                  Siguiente Paso <i className="fa-solid fa-arrow-right ml-2"></i>
+                  Siguiente Paso{' '}
+                  <i className="fa-solid fa-arrow-right ml-2"></i>
                 </button>
               ) : (
                 <button
                   onClick={handleApplyQuote}
-                  className="flex-1 md:flex-initial px-6 py-3 rounded-xl bg-green-600 text-white text-xs font-bold shadow-lg hover:bg-green-700 transition-all"
+                  className="flex-1 rounded-xl bg-green-600 px-6 py-3 text-xs font-bold text-white shadow-lg transition-all hover:bg-green-700 md:flex-initial"
                 >
-                  Solicitar Cotización con este Plan <i className="fa-solid fa-check ml-2"></i>
+                  Solicitar Cotización con este Plan{' '}
+                  <i className="fa-solid fa-check ml-2"></i>
                 </button>
               )}
             </div>
