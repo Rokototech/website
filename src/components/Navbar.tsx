@@ -1,4 +1,4 @@
-import { navLinks } from '../data/content'
+import { navLinks } from '../data/nav'
 import { useMobileMenu } from '../hooks/useMobileMenu'
 import { Logo } from './Logo'
 

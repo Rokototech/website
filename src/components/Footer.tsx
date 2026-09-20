@@ -1,4 +1,5 @@
-import { navLinks, contact } from '../data/content'
+import { navLinks } from '../data/nav'
+import { contact } from '../data/contact'
 import { useModal } from '../hooks/useModal'
 import { Logo } from './Logo'
 

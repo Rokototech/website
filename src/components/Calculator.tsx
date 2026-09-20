@@ -2,7 +2,8 @@ import {
   projectTypeOptions,
   featureOptions,
   timelineOptions,
-} from '../data/content'
+} from '../data/calculator'
+
 import { useCalculator } from '../hooks/useCalculator'
 
 const steps = [

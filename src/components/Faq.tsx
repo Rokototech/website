@@ -1,4 +1,4 @@
-import { faqs } from '../data/content'
+import { faqs } from '../data/faqs'
 import { useFaq } from '../hooks/useFaq'
 
 export function Faq() {

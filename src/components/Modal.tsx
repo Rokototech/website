@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { services, projects } from '../data/content'
+import { services } from '../data/services'
+import { projects } from '../data/projects'
 import { useModal } from '../hooks/useModal'
 
 export function Modal() {
