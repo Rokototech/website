@@ -1,4 +1,4 @@
-import { services } from '../../data/content'
+import { services } from '../../data/services'
 import { useModal } from '../modal/useModal'
 
 export function Services() {

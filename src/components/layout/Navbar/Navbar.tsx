@@ -1,4 +1,4 @@
-import { navLinks } from '../../../data/content'
+import { navLinks } from '../../../data/navLinks'
 import { useMobileMenu } from './useMobileMenu'
 import { Logo } from '../../ui/Logo'
 
