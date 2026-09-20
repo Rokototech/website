@@ -1,4 +1,5 @@
-import { stats, techStack } from '../../data/content'
+import { stats } from '../../data/stats'
+import { techStack } from '../../data/techStack'
 import { useCountUp } from './useCountUp'
 import { useInView } from '../../hooks/useInView'
 
