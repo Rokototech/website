@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 pb-20"
     >
       <canvas ref={canvasRef} id="hero-canvas"></canvas>
 
