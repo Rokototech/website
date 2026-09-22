@@ -1,27 +1,27 @@
+import logoSmall from '../../assets/logo/logoSmall.svg'
+
 interface LogoProps {
   size?: 'sm' | 'md'
   withTagline?: boolean
 }
 
 export function Logo({ size = 'md', withTagline = true }: LogoProps) {
-  const iconBox =
-    size === 'sm' ? 'w-8 h-8 p-1.5 rounded' : 'w-10 h-10 p-2 rounded-lg'
+  const imgHeight = size === 'sm' ? 'h-8' : 'h-11'
   const textSize = size === 'sm' ? 'text-lg' : 'text-xl'
 
   return (
     <a
       href="#inicio"
-      className="group flex items-center gap-3"
+      aria-label="VOLKANEXT — Inicio"
+      className="group flex shrink-0 items-center gap-3 transition-transform duration-300 hover:scale-105"
       onClick={(e) => e.preventDefault()}
     >
-      <div
-        className={`${iconBox} flex items-center justify-center bg-gradient-to-br from-brand-orange to-red-700 shadow-magma transition-transform group-hover:scale-105`}
-      >
-        <svg viewBox="0 0 100 100" className="h-full w-full fill-white">
-          <polygon points="50,10 90,85 68,85 50,45 32,85 10,85" />
-          <polygon points="50,45 68,85 45,85" fill="#0B0C14" />
-        </svg>
-      </div>
+      <img
+        src={logoSmall}
+        alt="VOLKANEXT"
+        draggable={false}
+        className={`${imgHeight} w-auto`}
+      />
       <div>
         <div
           className={`flex items-center ${textSize} font-heading font-bold tracking-wider text-white`}
