@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { navLinks } from '../../../data/navLinks'
+import { navLinks } from '@/data/navLinks'
 import { useMobileMenu } from './useMobileMenu'
-import { Logo } from '../../ui/Logo'
+import { Logo } from '@/components/ui/Logo'
 
 export function Navbar() {
   const { isOpen, toggle, close } = useMobileMenu()

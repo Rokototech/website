@@ -1,5 +1,5 @@
-import { services } from '../../data/services'
-import { useModal } from '../modal/useModal'
+import { services } from '@/data/services'
+import { useModal } from '@/features/modal/useModal'
 
 export function Services() {
   const { openService } = useModal()
