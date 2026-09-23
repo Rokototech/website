@@ -4,6 +4,7 @@ import {
   type ModalContextValue,
   type ModalPayload,
 } from './modal-context'
+import { legalDocs, type LegalDoc } from '@/data/legal'
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [content, setContent] = useState<ModalPayload>(null)
@@ -20,6 +21,10 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     setContent({ kind: 'alert', title, text })
   }, [])
 
+  const openLegal = useCallback((key: LegalDoc['key']) => {
+    setContent({ kind: 'legal', doc: legalDocs[key] })
+  }, [])
+
   const close = useCallback(() => setContent(null), [])
 
   const scrollToContact = useCallback(() => {
@@ -32,10 +37,11 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       openService,
       openProject,
       alert,
+      openLegal,
       close,
       scrollToContact,
     }),
-    [content, openService, openProject, alert, close, scrollToContact],
+    [content, openService, openProject, alert, openLegal, close, scrollToContact],
   )
 
   return <ModalContext.Provider value={value}>{children}</ModalContext.Provider>

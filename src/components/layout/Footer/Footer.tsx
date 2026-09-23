@@ -15,7 +15,7 @@ const specialties = [
 ]
 
 export function Footer() {
-  const { alert } = useModal()
+  const { alert, openLegal } = useModal()
 
   const handleSubscribe = () => {
     alert('Suscripción', '¡Gracias por suscribirte al boletín de VOLKANEXT!')
@@ -96,12 +96,18 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between border-t border-white/5 pt-8 text-xs text-gray-500 sm:flex-row">
           <p>&copy; 2026 VOLKANEXT. Todos los derechos reservados.</p>
           <div className="mt-4 flex gap-6 sm:mt-0">
-            <a href="#" className="hover:text-gray-300">
+            <button
+              onClick={() => openLegal('privacy')}
+              className="cursor-pointer hover:text-gray-300"
+            >
               Privacidad
-            </a>
-            <a href="#" className="hover:text-gray-300">
+            </button>
+            <button
+              onClick={() => openLegal('terms')}
+              className="cursor-pointer hover:text-gray-300"
+            >
               Términos de Servicio
-            </a>
+            </button>
           </div>
         </div>
       </div>

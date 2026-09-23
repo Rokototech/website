@@ -1,9 +1,12 @@
 import { createContext } from 'react'
 
+import type { LegalDoc } from '@/data/legal'
+
 export type ModalPayload =
   | { kind: 'service'; serviceKey: string }
   | { kind: 'project'; projectId: number }
   | { kind: 'alert'; title: string; text: string }
+  | { kind: 'legal'; doc: LegalDoc }
   | null
 
 export interface ModalContextValue {
@@ -11,6 +14,7 @@ export interface ModalContextValue {
   openService: (serviceKey: string) => void
   openProject: (projectId: number) => void
   alert: (title: string, text: string) => void
+  openLegal: (key: LegalDoc['key']) => void
   close: () => void
   scrollToContact: () => void
 }

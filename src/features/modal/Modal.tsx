@@ -95,6 +95,38 @@ export function Modal() {
       )
     }
 
+    if (content.kind === 'legal') {
+      return (
+        <>
+          <span className="text-xs font-bold tracking-widest text-brand-orange uppercase">
+            Documento Legal
+          </span>
+          <h3 className="mt-1 mb-1 font-heading text-2xl font-bold text-white">
+            {content.doc.title}
+          </h3>
+          <p className="mb-4 text-xs text-gray-500">{content.doc.updatedAt}</p>
+          <div className="max-h-[55vh] space-y-5 overflow-y-auto pr-1">
+            {content.doc.sections.map((section) => (
+              <div key={section.heading}>
+                <h4 className="mb-2 font-heading text-sm font-bold text-white">
+                  {section.heading}
+                </h4>
+                <p className="text-sm leading-relaxed text-brand-light-text">
+                  {section.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={close}
+            className="mt-6 w-full rounded-xl bg-brand-orange py-3 text-sm font-bold text-white shadow-magma"
+          >
+            Aceptar
+          </button>
+        </>
+      )
+    }
+
     return (
       <>
         <h3 className="mb-3 font-heading text-2xl font-bold text-white">
