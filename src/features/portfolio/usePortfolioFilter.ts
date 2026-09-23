@@ -3,7 +3,7 @@ import {
   projects,
   type Project,
   type ProjectFilter,
-} from '../../data/projects'
+} from '@/data/projects'
 
 export function usePortfolioFilter() {
   const [filter, setFilter] = useState<ProjectFilter>('all')

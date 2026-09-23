@@ -1,7 +1,7 @@
-import { navLinks } from '../../../data/navLinks'
-import { contact } from '../../../data/contact'
-import { useModal } from '../../../features/modal/useModal'
-import { Logo } from '../../ui/Logo'
+import { navLinks } from '@/data/navLinks'
+import { contact } from '@/data/contact'
+import { useModal } from '@/features/modal/useModal'
+import { Logo } from '@/components/ui/Logo'
 
 const footerNav: { label: string; href: string }[] = navLinks.filter(
   (link) => link.href !== '#contacto',

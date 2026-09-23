@@ -1,4 +1,4 @@
-import logoSmall from '../../assets/logo/logoSmall.svg'
+import logoSmall from '@/assets/logo/logoSmall.svg'
 
 interface LogoProps {
   size?: 'sm' | 'md'
