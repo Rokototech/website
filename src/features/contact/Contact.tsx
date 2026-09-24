@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 import { contact, socials } from '@/data/contact'
 
 const inputClass =
@@ -7,7 +7,7 @@ const inputClass =
 const labelClass =
   'block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2'
 
-export function Contact({ quoteMessage }: { quoteMessage?: string }) {
+export function Contact() {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -15,19 +15,6 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
     message: '',
   })
   const [sent, setSent] = useState(false)
-  const [prevQuote, setPrevQuote] = useState(quoteMessage ?? '')
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
-
-  if (quoteMessage !== prevQuote) {
-    setPrevQuote(quoteMessage ?? '')
-    setForm((prev) => ({ ...prev, message: quoteMessage ?? '' }))
-  }
-
-  useEffect(() => {
-    if (quoteMessage) {
-      textareaRef.current?.focus()
-    }
-  }, [quoteMessage])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -168,7 +155,6 @@ export function Contact({ quoteMessage }: { quoteMessage?: string }) {
               <div>
                 <label className={labelClass}>Detalles del Proyecto *</label>
                 <textarea
-                  ref={textareaRef}
                   name="message"
                   required
                   rows={4}

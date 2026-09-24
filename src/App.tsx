@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react'
 import { ModalProvider } from '@/features/modal/ModalProvider'
 import { Modal } from '@/features/modal/Modal'
 import { Navbar } from '@/components/layout/Navbar/Navbar'
@@ -13,17 +12,6 @@ import { Contact } from '@/features/contact/Contact'
 import { Footer } from '@/components/layout/Footer/Footer'
 
 function App() {
-  const [quoteMessage, setQuoteMessage] = useState('')
-
-  const handleApplyQuote = useCallback((message: string) => {
-    setQuoteMessage(message)
-    setTimeout(() => {
-      document
-        .getElementById('contacto')
-        ?.scrollIntoView({ behavior: 'smooth' })
-    }, 50)
-  }, [])
-
   return (
     <ModalProvider>
       <Navbar />
@@ -32,10 +20,10 @@ function App() {
         <StatsSection />
         <Services />
         <Portfolio />
-        <Calculator onApplyQuote={handleApplyQuote} />
+        <Calculator />
         <Testimonials />
         <Faq />
-        <Contact quoteMessage={quoteMessage} />
+        <Contact />
       </main>
       <Footer />
       <Modal />
