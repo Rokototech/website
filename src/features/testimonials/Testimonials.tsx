@@ -17,17 +17,17 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.initials}
-              className="glass-card relative rounded-2xl p-8"
+              className="glass-card relative flex flex-col rounded-2xl p-8"
             >
               <div className="mb-4 flex items-center gap-1 text-sm text-yellow-400">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <i key={i} className="fa-solid fa-star"></i>
                 ))}
               </div>
-              <p className="mb-6 text-sm leading-relaxed text-gray-300 italic">
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-gray-300 italic">
                 {t.quote}
               </p>
-              <div className="flex items-center gap-4">
+              <div className="mt-auto flex items-center gap-4">
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-full border font-bold ${t.avatarClass}`}
                 >
